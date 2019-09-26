@@ -6,22 +6,13 @@ class HomePage extends StatefulWidget
 {
   @override
  createState() {
-    // TODO: implement createState
    return HomePageState();
   }
 }
 class HomePageState extends State<HomePage>
  {
    
-  //  void initState() { 
-  //    super.initState();
-  //    FirebaseDatabase.instance.reference().child('recent').child('id')
-  //     .set({
-  //     'title': 'Realtime db rocks',
-        
-  //     });
-     
-  //  }
+  
    Widget build(BuildContext context) {
      
      return Center(
@@ -77,7 +68,7 @@ class HomePageState extends State<HomePage>
                   padding: EdgeInsets.all(20.0),
                   child:GestureDetector(
                     child: Container(
-                height: 60.0,
+                height: 40.0,
                 alignment: Alignment.center,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20.0),color:Colors.lightBlue
@@ -99,7 +90,7 @@ class HomePageState extends State<HomePage>
             children: <Widget>[
               Expanded(
                 child: Padding(
-                  padding:EdgeInsets.all(20.0),
+                  padding:EdgeInsets.only(left: 20,right: 20,bottom: 20),
                   child:RaisedButton(
                     child: Text('Facebook'),
                     textColor: Colors.white,
@@ -113,22 +104,46 @@ class HomePageState extends State<HomePage>
                   ),
                 ),
               ),
+              // Expanded(
+              //   child: Padding(
+              //     padding:EdgeInsets.all(20.0),
+              //     child:RaisedButton(
+              //       child: Text('Google'),
+              //       textColor: Colors.white,
+              //       color:Color(0xFFDF5138),
+              //       onPressed: (){},
+              //       shape:RoundedRectangleBorder(borderRadius: BorderRadius.circular(50.0) ),
+              //       elevation: 6.0,
+                    
+              //     ),
+              //   ),
+              // )
+               
+            ],
+          ),
+          Row(
+            
+            
+            children: <Widget>[
               Expanded(
                 child: Padding(
-                  padding:EdgeInsets.all(20.0),
+                  padding:EdgeInsets.only(left: 20.0,right: 20.0),
                   child:RaisedButton(
-                    child: Text('Google'),
+                    child: Text('Login'),
                     textColor: Colors.white,
-                    color:Color(0xFFDF5138),
-                    onPressed: (){},
+                    color:Color(0xFF3b5998),
+                    onPressed: (){
+                     Navigator.of(context).pushNamed("/loginUser");
+                                           },
                     shape:RoundedRectangleBorder(borderRadius: BorderRadius.circular(50.0) ),
                     elevation: 6.0,
                     
                   ),
                 ),
-              )
+              ),
             ],
-          )
+          ),
+          
        ],
      )
      
@@ -136,7 +151,7 @@ class HomePageState extends State<HomePage>
         } 
        void initiateFacebookLogin() async {
     var facebookLogin = FacebookLogin();
-    var facebookLoginResult =
+   // var facebookLoginResult =
         await facebookLogin.logInWithReadPermissions(['email']);
     //  switch (facebookLoginResult.status) {
     //   case FacebookLoginStatus.error:
