@@ -95,7 +95,7 @@ class login extends StatefulWidget
                 ],
               ),
               
-            ),
+           ),
              ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,

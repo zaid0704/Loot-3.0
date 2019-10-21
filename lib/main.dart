@@ -47,7 +47,16 @@ class frontState extends State<frontPage> {
           title:Text('My Login Screen'),
           backgroundColor: Colors.green,
         ),
-        body: HomePage(),
+        body: Container(
+          child: HomePage(),
+          decoration: BoxDecoration(
+            image:DecorationImage(
+              image: AssetImage('assest/images/background.jpg'),
+              fit: BoxFit.cover
+            ),
+          ),
+        ),
+        
       ),
 
     );
